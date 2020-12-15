@@ -99,6 +99,7 @@ d       # delete marked text
 
 ## Cut and paste
 ```bash
+yy       # yank (copy) a line if selected in Visual mode
 yy       # yank (copy) a line
 2yy      # yank (copy) 2 lines
 yw       # yank (copy) the characters of the word from the cursor position to the start of the next word
