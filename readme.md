@@ -181,7 +181,7 @@ gT or :tabprev or :tabp # move to the previous tab
 :tabdo command          # run the command on all tabs (e.g. :tabdo q - closes all opened tabs)
 ```
 
-### Plugis
+### Plugins
 ### PHP-CS-FIXER
 https://github.com/stephpy/vim-php-cs-fixe
 ```bash
