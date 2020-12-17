@@ -181,3 +181,9 @@ gT or :tabprev or :tabp # move to the previous tab
 :tabdo command          # run the command on all tabs (e.g. :tabdo q - closes all opened tabs)
 ```
 
+### Plugis
+### PHP-CS-FIXER
+```bash
+<leader>pcd       # CS Fixer directory
+<leader>pcf       # CS Fixer file
+```
