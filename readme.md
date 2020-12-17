@@ -119,6 +119,7 @@ x        # delete (cut) character
 ## Search and replace
 ```bash
 /pattern       # search for pattern
+/pattern\c     # search for pattern ignore case
 ?pattern       # search backward for pattern
 \vpattern      # 'very magic' pattern: non-alphanumeric characters are interpreted as special regex symbols (no escaping needed)
 n              # repeat search in same direction
