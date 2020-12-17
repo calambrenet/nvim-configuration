@@ -4,10 +4,13 @@
 
 ## Global
 ```bash
-:help keyword # open help for keyword
-:o file       # open file
-:saveas file  # save file as
-:close        # close current pane
+:help keyword    # open help for keyword
+:o file          # open file
+:saveas file     # save file as
+:close           # close current pane
+:(e)dit filename # open file or create if no exists
+:w               # write file
+F8               # toggle Nerdtree
 ```
 
 ## Cursor movement
