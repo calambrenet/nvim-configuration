@@ -29,7 +29,6 @@ Plug 'neoclide/coc-snippets',       {'do': cocPlugInstall }
 Plug 'neoclide/coc-python',         {'do': cocPlugInstall }
 Plug 'marlonfan/coc-phpls',          {'do': cocPlugInstall }
 
-
 Plug 'thaerkh/vim-workspace'  " Workspace
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -37,16 +36,26 @@ Plug 'junegunn/fzf.vim'
 
 Plug 'vim-vdebug/vdebug'  " Debug
 
+Plug 'vim-syntastic/syntastic' " syntastic
+
+Plug 'stephpy/vim-php-cs-fixer' " PHP Format. More info: https://github.com/stephpy/vim-php-cs-fixer
+
 call plug#end()
 
-" let g:vdebug_options.path_maps = {"/var/www/html": "/"}
+" let g:vdebug_options = {
+" \    "port" : 9000,
+" \    "path_maps": {'/var/www/html' : '/home/calambrenet/WorkspacePHP/incapto_test/html'}
+" \}
 
+let mapleader = ","
 
 " NerdTree
 let g:NERDTreeChDirMode = 2  " Cambia el directorio actual al nodo padre actual
+let NERDTreeShowHidden=1     " Mostrar ficheros ocultos
+let g:NERDTreeWinSize=50
 
-" Abrir/cerrar NERDTree con F2
-map <F2> :NERDTreeToggle<CR>
+" Abrir/cerrar NERDTree con F8
+map <F8> :NERDTreeToggle<CR>
 
 " Airline
 let g:airline#extensions#tabline#enabled = 1  " Mostrar buffers abiertos (como pestañas)
@@ -68,7 +77,8 @@ set noshowmode  " No mostrar el modo actual (ya lo muestra la barra de estado)
 
 let g:airline#extensions#tabline#buffer_idx_mode = 1
 
-let mapleader = ","
+
+" let mapleader = ","
 
 nmap <leader>1 <Plug>AirlineSelectTab1
 nmap <leader>2 <Plug>AirlineSelectTab2
@@ -128,6 +138,26 @@ set fillchars+=vert:\┊
 " Double ESC the terminal to exit terminal-job mode.
 tnoremap <Esc><Esc> <C-\><C-n>
 
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+map <F12> <ESC>:call SyntasticToggle()<CR>
+
+function! SyntasticToggle()
+  let g:wi = getloclist(2, {'winid' : 1})
+  if g:wi != {}
+    lclose
+  else
+    Errors
+  endif
+endfunction
 
 "COC
 
