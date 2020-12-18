@@ -188,3 +188,10 @@ https://github.com/stephpy/vim-php-cs-fixe
 <leader>pcd       # CS Fixer directory
 <leader>pcf       # CS Fixer file
 ```
+
+### NERDTREE
+https://github.com/preservim/nerdtree
+```bash
+<F8>              # Show/Hide nerdtree
+<leader>r         # Refresh
+```
