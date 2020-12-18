@@ -4,10 +4,13 @@
 
 ## Global
 ```bash
-:help keyword # open help for keyword
-:o file       # open file
-:saveas file  # save file as
-:close        # close current pane
+:help keyword    # open help for keyword
+:o file          # open file
+:saveas file     # save file as
+:close           # close current pane
+:(e)dit filename # open file or create if no exists
+:w               # write file
+F8               # toggle Nerdtree
 ```
 
 ## Cursor movement
@@ -99,6 +102,7 @@ d       # delete marked text
 
 ## Cut and paste
 ```bash
+yy       # yank (copy) a line if selected in Visual mode
 yy       # yank (copy) a line
 2yy      # yank (copy) 2 lines
 yw       # yank (copy) the characters of the word from the cursor position to the start of the next word
@@ -118,6 +122,7 @@ x        # delete (cut) character
 ## Search and replace
 ```bash
 /pattern       # search for pattern
+/pattern\c     # search for pattern ignore case
 ?pattern       # search backward for pattern
 \vpattern      # 'very magic' pattern: non-alphanumeric characters are interpreted as special regex symbols (no escaping needed)
 n              # repeat search in same direction
@@ -176,3 +181,35 @@ gT or :tabprev or :tabp # move to the previous tab
 :tabdo command          # run the command on all tabs (e.g. :tabdo q - closes all opened tabs)
 ```
 
+### Plugins
+### PHP-CS-FIXER
+https://github.com/stephpy/vim-php-cs-fixe
+```bash
+<leader>pcd       # CS Fixer directory
+<leader>pcf       # CS Fixer file
+```
+
+### NERDTREE
+https://github.com/preservim/nerdtree
+```bash
+<F8>              # Show/Hide nerdtree
+<leader>r         # Refresh
+```
+
+### VDEBUG
+https://github.com/vim-vdebug/vdebug
+```bash
+<F5>              # start/run (to next breakpoint/end of script)
+<F2>              # step over
+<F3>              # step into
+<F4>              # step out
+<F6>              # stop debugging (kills script)
+<F7>              # detach script from debugger
+<F9>              # run to cursor
+<F10>             # toggle line breakpoint
+<F11>             # show context variables (e.g. after "eval")
+<F12>             # evaluate variable under cursor
+:Breakpoint <type> <args>   # set a breakpoint of any type (see :help VdebugBreakpoints)
+:VdebugEval <code>          # evaluate some code and display the result
+<Leader>e                   # evaluate the expression under visual highlight and display the result
+```
