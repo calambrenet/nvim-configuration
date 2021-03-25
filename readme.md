@@ -183,7 +183,7 @@ gT or :tabprev or :tabp # move to the previous tab
 
 ### Plugins
 ### PHP-CS-FIXER
-https://github.com/stephpy/vim-php-cs-fixe
+https://github.com/stephpy/vim-php-cs-fixer
 ```bash
 <leader>pcd       # CS Fixer directory
 <leader>pcf       # CS Fixer file
