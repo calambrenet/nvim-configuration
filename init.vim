@@ -21,7 +21,7 @@ Plug 'tpope/vim-fugitive'  " Git
 Plug 'airblade/vim-gitgutter'
 
 let g:cocPlugInstall = 'yarn install --frozen-lockfile'
-Plug 'neoclide/coc.nvim',           {'branch': 'master', 'do': { -> coc#util#install({'tag':1})}}	" COC
+Plug 'neoclide/coc.nvim',           {'branch': 'release', 'do': { -> coc#util#install({'tag':1})}}	" COC
 Plug 'neoclide/coc-json',           {'do': cocPlugInstall }
 Plug 'neoclide/coc-css',            {'do': cocPlugInstall }
 Plug 'neoclide/coc-pairs',          {'do': cocPlugInstall }
@@ -40,6 +40,13 @@ Plug 'vim-syntastic/syntastic' " syntastic
 
 Plug 'stephpy/vim-php-cs-fixer' " PHP Format. More info: https://github.com/stephpy/vim-php-cs-fixer
 
+" Snippets
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+
+" Greeper
+Plug 'mhinz/vim-grepper'
+
 call plug#end()
 
 " let g:vdebug_options = {
@@ -48,6 +55,17 @@ call plug#end()
 " \}
 
 let mapleader = ","
+
+" Snippets
+" Trigger configuration. You need to change this to something other than <tab> if you use one of the following:
+" - https://github.com/Valloric/YouCompleteMe
+" - https://github.com/nvim-lua/completion-nvim
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
 
 " NerdTree
 let g:NERDTreeChDirMode = 2  " Cambia el directorio actual al nodo padre actual
@@ -77,7 +95,6 @@ set noshowmode  " No mostrar el modo actual (ya lo muestra la barra de estado)
 
 let g:airline#extensions#tabline#buffer_idx_mode = 1
 
-
 " let mapleader = ","
 
 nmap <leader>1 <Plug>AirlineSelectTab1
@@ -90,6 +107,7 @@ nmap <leader>7 <Plug>AirlineSelectTab7
 nmap <leader>8 <Plug>AirlineSelectTab8
 nmap <leader>9 <Plug>AirlineSelectTab9
 nmap <leader>10 <Plug>AirlineSelectTab10
+
 
 noremap <leader>w :w<cr>
 noremap <leader>gs :CocSearch
@@ -112,11 +130,26 @@ set nobackup							" don't backup
 " Enable filetype
 filetype indent plugin on
 
+" Grepper
+nnoremap <leader>gr :Grepper -tool git<cr>
+nnoremap <leader>GR :Grepper -tool ag<cr>
+
+nmap gs <plug>(GrepperOperator)
+xmap gs <plug>(GrepperOperator)
+
+" Optional. The default behaviour should work for most users.
+let g:grepper               = {}
+let g:grepper.tools         = ['git', 'ag', 'rg']
+let g:grepper.jump          = 1
+let g:grepper.next_tool     = '<leader>g'
+let g:grepper.simple_prompt = 1
+let g:grepper.quickfix      = 0
+
 
 set number									" Show line numbers
 set nowrap              " don't wrap long lines
 set number              " show line numbers
-" set relativenumber      " show numbers as relative by default
+set relativenumber      " show numbers as relative by default
 set showmatch           " higlight matching parentheses and brackets
 
 " Modify indenting settings
@@ -322,3 +355,5 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
+

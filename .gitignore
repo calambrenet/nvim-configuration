@@ -1,3 +1,6 @@
 *.save
 selected
 undodir
+pack
+*.swp
+
