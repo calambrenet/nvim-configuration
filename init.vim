@@ -215,6 +215,16 @@ endfunction
 
 "COC
 
+let g:coc_global_extensions = [
+            \ 'coc-json',
+            \ 'coc-clangd',
+            \ 'coc-python',
+            \ 'coc-snippets',
+            \ 'coc-ultisnips',
+            \ 'coc-texlab',
+            \ 'coc-phpls',
+            \ ]
+
 " TextEdit might fail if hidden is not set.
 set hidden
 
