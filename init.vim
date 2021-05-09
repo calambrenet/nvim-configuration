@@ -20,6 +20,8 @@ Plug 'StanAngeloff/php.vim', { 'for': 'php' }
 Plug 'tpope/vim-fugitive'  " Git
 Plug 'airblade/vim-gitgutter'
 
+Plug 'HerringtonDarkholme/yats.vim' " https://github.com/HerringtonDarkholme/yats.vim
+
 let g:cocPlugInstall = 'yarn install --frozen-lockfile'
 Plug 'neoclide/coc.nvim',           {'branch': 'release', 'do': { -> coc#util#install({'tag':1})}}	" COC
 Plug 'neoclide/coc-json',           {'do': cocPlugInstall }
@@ -28,6 +30,10 @@ Plug 'neoclide/coc-pairs',          {'do': cocPlugInstall }
 Plug 'neoclide/coc-snippets',       {'do': cocPlugInstall }
 Plug 'neoclide/coc-python',         {'do': cocPlugInstall }
 Plug 'marlonfan/coc-phpls',          {'do': cocPlugInstall }
+
+let g:coc_global_extensions = [
+\ 'coc-tsserver'
+\ ]
 
 Plug 'thaerkh/vim-workspace'  " Workspace
 
