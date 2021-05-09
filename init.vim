@@ -46,12 +46,16 @@ Plug 'vim-syntastic/syntastic' " syntastic
 
 Plug 'stephpy/vim-php-cs-fixer' " PHP Format. More info: https://github.com/stephpy/vim-php-cs-fixer
 
+Plug 'w0rp/ale' " eslint https://github.com/dense-analysis/ale
+
 " Snippets
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 " Greeper
 Plug 'mhinz/vim-grepper'
+
+Plug 'APZelos/blamer.nvim' " Gitlens https://github.com/APZelos/blamer.nvim
 
 call plug#end()
 
@@ -85,11 +89,19 @@ map <F8> :NERDTreeToggle<CR>
 let g:airline#extensions#tabline#enabled = 1  " Mostrar buffers abiertos (como pestañas)
 let g:airline#extensions#tabline#fnamemod = ':t'  " Mostrar sólo el nombre del archivo
 let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#ale#enabled = 1
 
 let g:airline_theme='badwolf'
 
 " Workspace
 set sessionoptions-=blank
+
+"Gitlens
+let g:blamer_enabled = 1
+let g:blamer_show_in_insert_modes = 0
+let g:blamer_prefix = ' > '
+let g:blamer_date_format = '%d/%m/%Y'
+
 
 " Python
 let g:python3_host_prog = '/usr/bin/python3'
@@ -119,6 +131,9 @@ noremap <leader>w :w<cr>
 noremap <leader>gs :CocSearch
 noremap <leader>fs : Files<cr>
 noremap <leader>s :ToggleWorkspace<CR>
+
+"Buscar texto seleccionado
+vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 
 
 "Identación
@@ -177,6 +192,12 @@ set fillchars+=vert:\┊
 " Double ESC the terminal to exit terminal-job mode.
 tnoremap <Esc><Esc> <C-\><C-n>
 
+" eslint
+let g:ale_sign_error = '✘'
+let g:ale_sign_warning = '⚠'
+highlight ALEErrorSign ctermbg=NONE ctermfg=red
+highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
+
 " Syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -199,6 +220,16 @@ function! SyntasticToggle()
 endfunction
 
 "COC
+
+let g:coc_global_extensions = [
+            \ 'coc-json',
+            \ 'coc-clangd',
+            \ 'coc-python',
+            \ 'coc-snippets',
+            \ 'coc-ultisnips',
+            \ 'coc-texlab',
+            \ 'coc-phpls',
+            \ ]
 
 " TextEdit might fail if hidden is not set.
 set hidden
