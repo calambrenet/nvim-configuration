@@ -31,10 +31,6 @@ Plug 'neoclide/coc-snippets',       {'do': cocPlugInstall }
 Plug 'neoclide/coc-python',         {'do': cocPlugInstall }
 Plug 'marlonfan/coc-phpls',          {'do': cocPlugInstall }
 
-let g:coc_global_extensions = [
-\ 'coc-tsserver'
-\ ]
-
 Plug 'thaerkh/vim-workspace'  " Workspace
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
