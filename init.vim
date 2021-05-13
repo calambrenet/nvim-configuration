@@ -53,6 +53,8 @@ Plug 'mhinz/vim-grepper'
 
 Plug 'APZelos/blamer.nvim' " Gitlens https://github.com/APZelos/blamer.nvim
 
+Plug 'MattesGroeger/vim-bookmarks' " Bookmarks https://github.com/MattesGroeger/vim-bookmarks
+
 call plug#end()
 
 " let g:vdebug_options = {
