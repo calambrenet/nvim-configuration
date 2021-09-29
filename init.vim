@@ -44,23 +44,42 @@ Plug 'stephpy/vim-php-cs-fixer' " PHP Format. More info: https://github.com/step
 
 Plug 'w0rp/ale' " eslint https://github.com/dense-analysis/ale
 
+Plug 'dyng/ctrlsf.vim' " https://github.com/dyng/ctrlsf.vim
+
+Plug 'sonph/onehalf', { 'rtp': 'vim' }  " https://github.com/sonph/onehalf/tree/master/vim
+
 " Snippets
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 " Greeper
-Plug 'mhinz/vim-grepper'
+" Plug 'mhinz/vim-grepper'
 
 Plug 'APZelos/blamer.nvim' " Gitlens https://github.com/APZelos/blamer.nvim
 
 Plug 'MattesGroeger/vim-bookmarks' " Bookmarks https://github.com/MattesGroeger/vim-bookmarks
 
+Plug 'rafi/vim-venom', { 'for': 'python' } " https://github.com/rafi/vim-venom
+
 call plug#end()
 
-" let g:vdebug_options = {
-" \    "port" : 9000,
-" \    "path_maps": {'/var/www/html' : '/home/calambrenet/WorkspacePHP/incapto_test/html'}
-" \}
+" Venon
+let g:venom_use_tools = 1
+let g:venom_tools = {
+  \ 'poetry': 'poetry env info -p',
+  \ }
+
+" let g:vdebug_options = {}
+
+let g:vdebug_options = {
+\    "port" : 9003,
+\    "break_on_open": 0,
+\    "path_maps": {'/var/www/html' : '/Users/joseluis/WorkspacePHP/incapto/html'}
+\}
+
+let g:ctrlsf_backend = 'rg'
+
+set mouse=nicr " fix scroll in mac/iterm
 
 let mapleader = ","
 
@@ -89,7 +108,20 @@ let g:airline#extensions#tabline#fnamemod = ':t'  " Mostrar sólo el nombre del 
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#ale#enabled = 1
 
-let g:airline_theme='badwolf'
+let g:airline_theme='onehalfdark'
+
+syntax on
+set t_Co=256
+set cursorline
+colorscheme onehalflight
+
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
+
+
 
 " Workspace
 set sessionoptions-=blank
@@ -126,7 +158,8 @@ nmap <leader>10 <Plug>AirlineSelectTab10
 
 
 noremap <leader>w :w<cr>
-noremap <leader>gs :CocSearch
+"noremap <leader>gs :CocSearch
+noremap <leader>gs :CtrlSF
 noremap <leader>fs : Files<cr>
 noremap <leader>s :ToggleWorkspace<CR>
 
@@ -189,6 +222,9 @@ set fillchars+=vert:\┊
 
 " Double ESC the terminal to exit terminal-job mode.
 tnoremap <Esc><Esc> <C-\><C-n>
+
+" Save file on esc
+inoremap <Esc> <Esc>:w<CR>
 
 " eslint
 let g:ale_sign_error = '✘'
