@@ -117,7 +117,14 @@ d$       # delete (cut) to the end of the line
 d^       # delete (cut) to the first non-blank character of the line
 d0       # delete (cut) to the begining of the line
 x        # delete (cut) character
-```
+A [space] ctrl + r " # paste text at the end of the line with a space between in vim
+
+ See :h i_ctrl-r for more information. This is what is happening:
+ A        Append text to end of line (enters insert mode).
+ space  - Actual space key to insert a space.
+ ctrl+r - Insert contents of a register.
+ "      - Default register of yank and paste.
+
 
 ## Search and replace
 ```bash
