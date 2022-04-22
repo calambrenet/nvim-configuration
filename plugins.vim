@@ -7,7 +7,8 @@ Plug 'preservim/nerdtree' |
             \ Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'  " Temas para airline
-Plug 'sonph/onehalf', { 'rtp': 'vim' }
+"Plug 'sonph/onehalf', { 'rtp': 'vim' }
+Plug 'shaunsingh/nord.nvim'
 "Plug 'sheerun/vim-polyglot'
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-commentary'
@@ -26,6 +27,9 @@ Plug 'APZelos/blamer.nvim' " Gitlens https://github.com/APZelos/blamer.nvim
 Plug 'MattesGroeger/vim-bookmarks' " Bookmarks https://github.com/MattesGroeger/vim-bookmarks
 " Plug 'vim-vdebug/vdebug'  " Debug
 Plug 'puremourning/vimspector'
+Plug 'mhinz/vim-startify'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'sindrets/diffview.nvim'
 
 call plug#end()
 

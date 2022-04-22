@@ -1,5 +1,3 @@
-syntax on
-
 set fileformat=unix
 set encoding=UTF-8
 
@@ -42,7 +40,7 @@ set smartcase
 set incsearch
 set hlsearch
 nnoremap <CR> :noh<CR><CR>:<backspace>
-set textwidth=79
+" set textwidth=79
 set mouse=a
 
 "-- COLOR & THEME CONFIG
@@ -67,6 +65,7 @@ endif
 so ~/.config/nvim/plugins.vim
 so ~/.config/nvim/plugin-config.vim
 so ~/.config/nvim/autoclose.vim
+" so ~/.config/nvim/molokai.vim
 
 
 "Buscar texto seleccionado
@@ -76,4 +75,8 @@ vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 set undofile
 set undodir=~/.config/nvim/undodir
 
-nnoremap <leader>e :e $MYVIMRC<CR>  " Abrir el archivo init.vim con <líder> + e
+nnoremap <leader>e :e $MYVIMRC<CR>  " Abrir el archivo init.vim con <líder> + e 
+
+set colorcolumn=100
+" let &colorcolumn = join(range(81,999), ',')
+

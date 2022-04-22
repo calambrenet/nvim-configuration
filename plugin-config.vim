@@ -9,7 +9,7 @@ let g:vimspector_install_gadgets = [ 'debugpy', 'vscode-node-debug2', 'vscode-ph
 let g:vimspector_enable_mappings = 'HUMAN'
 let s:vimspector_path = expand( '<sfile>:p:h:h' )
 nnoremap <C-d> :call vimspector#Launch()<CR>
-nnoremap <C-v> :call vimspector#Reset()<CR>
+nnoremap <C-v> :call vimspector#Reset( { 'interactive': v:true } )<CR>
 " mnemonic 'di' = 'debug inspect' (pick your own, if you prefer!)
 
 " for normal mode - the word under the cursor
@@ -56,11 +56,14 @@ syntax on
 
 set t_Co=256
 set cursorline
-colorscheme onehalflight
-let g:airline_theme='onehalflight'
+" colorscheme onehalfdark
+" let g:airline_theme='onehalfdark'
+let g:airline_theme='deus'
+colorscheme nord
+
 " lightline
-let g:lightline = { 'colorscheme': 'onehalflight' } 
-set background=light " for the light version
+" let g:lightline = { 'colorscheme': 'onehalfdark' } 
+" set background=dark " for the light version
 
 if exists('+termguicolors')
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
@@ -75,7 +78,7 @@ let g:airline#extensions#tabline#buffer_idx_mode = 1
 
 
 "-- INDENTLINE CONFIG
-let g:indentLine_color_gui = '#cbcbcb'
+let g:indentLine_color_gui = '#646464' " '#cbcbcb'
 let g:indentLine_setConceal = 0
 let g:indentLine_char = '┊'
 
@@ -91,6 +94,9 @@ let g:user_emmet_settings = {
 \      'extends' : 'jsx',
 \  },
 \}
+
+"-- ALE
+let b:ale_linters = ['flake8', 'pylint']
 
 
 "-- Workspace
@@ -223,6 +229,7 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gl <Plug>(coc-codelens-action)
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
