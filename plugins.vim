@@ -30,6 +30,12 @@ Plug 'puremourning/vimspector'
 Plug 'mhinz/vim-startify'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'sindrets/diffview.nvim'
+Plug 'neoclide/vim-jsx-improve'
+Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+Plug 'jparise/vim-graphql'
 
 call plug#end()
 

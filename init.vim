@@ -61,12 +61,14 @@ if (empty($TMUX))
   endif
 endif
 
-
 so ~/.config/nvim/plugins.vim
 so ~/.config/nvim/plugin-config.vim
 so ~/.config/nvim/autoclose.vim
 " so ~/.config/nvim/molokai.vim
 
+" Disabvle syntax hightlighting for large files
+autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
+autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
 
 "Buscar texto seleccionado
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>

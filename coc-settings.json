@@ -39,6 +39,9 @@
   "eslint.validate": [
     "graphql"
   ],
+  "eslint.autoFixOnSave": true,
+  "eslint.filetypes": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+  "prettier.disableSuccessMessage": true,
   "intelephense.stubs": [
       "apache",
       "bcmath",
