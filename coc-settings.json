@@ -119,8 +119,7 @@
   "coc.preferences.formatOnSaveFiletypes": [
     "graphql",
     "typescript",
-    "typescriptreact",
-    "python"
+    "typescriptreact"
   ],
   "cSpell.userWords": [
     "Neovim",
