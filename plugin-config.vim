@@ -9,7 +9,7 @@ let g:vimspector_install_gadgets = [ 'debugpy', 'vscode-node-debug2', 'vscode-ph
 let g:vimspector_enable_mappings = 'HUMAN'
 let s:vimspector_path = expand( '<sfile>:p:h:h' )
 nnoremap <C-d> :call vimspector#Launch()<CR>
-nnoremap <C-v> :call vimspector#Reset( { 'interactive': v:true } )<CR>
+nnoremap <C-v> :call vimspector#Reset( { 'interactive': v:false } )<CR>
 " mnemonic 'di' = 'debug inspect' (pick your own, if you prefer!)
 
 " for normal mode - the word under the cursor
@@ -239,6 +239,9 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nmap <silent> gl <Plug>(coc-codelens-action)
+
+" Snippets
+nmap <silent> l <Plug>(coc-snippets-expand)
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>

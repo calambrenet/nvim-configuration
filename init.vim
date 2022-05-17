@@ -82,3 +82,4 @@ nnoremap <leader>e :e $MYVIMRC<CR>  " Abrir el archivo init.vim con <líder> + e
 set colorcolumn=100
 " let &colorcolumn = join(range(81,999), ',')
 
+nnoremap <leader>p Oimport pdb; pdb.set_trace()<Esc>
