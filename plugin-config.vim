@@ -18,6 +18,9 @@ nmap <Leader>di <Plug>VimspectorBalloonEval
 xmap <Leader>di <Plug>VimspectorBalloonEval
 
 
+"-- PyDocString
+let g:pydocstring_formatter = 'google' 
+
 "-- NERDTree CONFIG
 nnoremap <C-t> :NERDTreeToggle<CR>
 let NERDTreeRespectWildIgnore=1
@@ -241,7 +244,7 @@ nmap <silent> gr <Plug>(coc-references)
 nmap <silent> gl <Plug>(coc-codelens-action)
 
 " Snippets
-nmap <silent> l <Plug>(coc-snippets-expand)
+nmap <silent> gl <Plug>(coc-snippets-expand)
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>

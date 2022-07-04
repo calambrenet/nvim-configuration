@@ -36,6 +36,11 @@ Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'jparise/vim-graphql'
+Plug 'kdheepak/lazygit.nvim'
+Plug 'heavenshell/vim-pydocstring', { 'do': 'make install', 'for': 'python' }
+" No se configurar:
+"Plug 'neovim/nvim-lspconfig'
+"Plug 'SmiteshP/nvim-navic'
 
 call plug#end()
 

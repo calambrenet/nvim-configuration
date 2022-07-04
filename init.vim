@@ -1,5 +1,4 @@
 set fileformat=unix
-set encoding=UTF-8
 
 
 "au BufNewFile,BufRead *.py
@@ -73,11 +72,14 @@ autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
 "Buscar texto seleccionado
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 
+"Cerrar todos los buffers excepto el activo 
+map <leader>o :%bd\|e#<cr>
+
 "Persist undo history between file editing sessions. 
 set undofile
 set undodir=~/.config/nvim/undodir
 
-nnoremap <leader>e :e $MYVIMRC<CR>  " Abrir el archivo init.vim con <líder> + e 
+nnoremap <leader>e :e $MYVIMRC<CR>  " Abrir el archivo init.vim con <líder> + e
 
 set colorcolumn=100
 " let &colorcolumn = join(range(81,999), ',')
