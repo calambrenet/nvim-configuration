@@ -38,6 +38,7 @@ Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'jparise/vim-graphql'
 Plug 'kdheepak/lazygit.nvim'
 Plug 'heavenshell/vim-pydocstring', { 'do': 'make install', 'for': 'python' }
+Plug 'rafi/vim-venom', { 'for': 'python' }
 " No se configurar:
 "Plug 'neovim/nvim-lspconfig'
 "Plug 'SmiteshP/nvim-navic'
