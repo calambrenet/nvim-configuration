@@ -29,6 +29,7 @@ set wildignore+=*.DS_Store,*.min.*
 let g:NERDTreeChDirMode = 2  " Cambia el directorio actual al nodo padre actual
 let NERDTreeShowHidden=1     " Mostrar ficheros ocultos
 let g:NERDTreeWinSize=50
+let g:NERDTreeQuitOnOpen=1
 
 
 "-- NERDTree git	
@@ -62,7 +63,14 @@ set cursorline
 " colorscheme onehalfdark
 " let g:airline_theme='onehalfdark'
 let g:airline_theme='deus'
-colorscheme nord
+" colorscheme nord
+
+let g:nord_underline_option = 'none'
+let g:nord_italic = v:true
+let g:nord_italic_comments = v:false
+let g:nord_minimal_mode = v:false
+let g:nord_alternate_backgrounds = v:false
+colorscheme nordic
 
 " lightline
 " let g:lightline = { 'colorscheme': 'onehalfdark' } 

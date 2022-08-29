@@ -72,7 +72,7 @@ autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
 "Buscar texto seleccionado
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 
-"Cerrar todos los buffers excepto el activo 
+"Cerrar todos los buffers excepto el activo
 map <leader>o :%bd\|e#<cr>
 
 "Persist undo history between file editing sessions. 
@@ -85,3 +85,8 @@ set colorcolumn=100
 " let &colorcolumn = join(range(81,999), ',')
 
 nnoremap <leader>p Oimport pdb; pdb.set_trace()<Esc>
+
+let g:ale_sign_error = '✖ '
+
+" Open terminal
+noremap <leader>th :botright new <Bar> :terminal<cr>
