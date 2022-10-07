@@ -13,17 +13,15 @@
   "suggest.labelMaxLength": 70,
   "diagnostic.errorSign": "✖",
   "diagnostic.infoSign": "ⓘ",
-  "diagnostic.enableMessage": "jump",
-  "diagnostic.virtualText": true,
-  "diagnostic.virtualTextCurrentLineOnly": false,
+  "diagnostic.format": "%message [%source]",
+  "diagnostic.virtualText": false,
+  "diagnostic.checkCurrentLine": true,
+  "diagnostic.separateRelatedInformationAsDiagnostics": true,
   "prettier.onlyUseLocalVersion": true,
   "eslint.probe": [
-    "javascript",
-    "javascriptreact",
     "typescript",
     "typescriptreact",
     "html",
-    "vue",
     "markdown",
     "graphql"
   ],
@@ -106,11 +104,6 @@
       "zip",
       "zlib",
       "wordpress"
-  ],
-  "coc.preferences.formatOnSaveFiletypes": [
-    "graphql",
-    "typescript",
-    "typescriptreact"
   ],
   "cSpell.userWords": [
     "Neovim",

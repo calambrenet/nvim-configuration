@@ -62,7 +62,7 @@ endif
 
 so ~/.config/nvim/plugins.vim
 so ~/.config/nvim/plugin-config.vim
-so ~/.config/nvim/autoclose.vim
+" so ~/.config/nvim/autoclose.vim  " quitado en favor a nvim-autopairs 
 " so ~/.config/nvim/molokai.vim
 
 " Disabvle syntax hightlighting for large files

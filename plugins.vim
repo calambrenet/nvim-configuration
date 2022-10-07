@@ -17,8 +17,8 @@ Plug 'tpope/vim-surround'
 Plug 'dense-analysis/ale'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/tagbar'
-Plug 'junegunn/fzf' | Plug 'junegunn/fzf.vim'
-Plug 'wookayin/fzf-ripgrep.vim'
+"Plug 'junegunn/fzf' | Plug 'junegunn/fzf.vim'
+"Plug 'wookayin/fzf-ripgrep.vim'
 Plug 'SirVer/ultisnips'
 Plug 'yggdroot/indentline'
 Plug 'thaerkh/vim-workspace'  " Workspace
@@ -37,12 +37,19 @@ Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-Plug 'jparise/vim-graphql'
+"Plug 'jparise/vim-graphql'
 Plug 'kdheepak/lazygit.nvim'
 Plug 'heavenshell/vim-pydocstring', { 'do': 'make install', 'for': 'python' }
 Plug 'rafi/vim-venom', { 'for': 'python' }
 Plug 'tpope/vim-eunuch'
-" No se configurar:
+Plug 'mbbill/undotree'
+Plug 'windwp/nvim-autopairs'
+
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+Plug 'folke/todo-comments.nvim'
+
+" No sé configurar:
 "Plug 'neovim/nvim-lspconfig'
 "Plug 'SmiteshP/nvim-navic'
 
@@ -53,3 +60,16 @@ call plug#end()
 "PlugStatus
 "PlugClean
 "PlugUpgrade
+
+
+Plug 'windwp/nvim-autopairs'
+
+
+lua << EOF
+  require("nvim-autopairs").setup {}
+  require("todo-comments").setup {
+    -- your configuration comes here
+    -- or leave it empty to use the default settings
+    -- refer to the configuration section below
+  }
+EOF

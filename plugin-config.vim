@@ -125,8 +125,12 @@ let g:blamer_template = '[<commit-short>] <committer>, <committer-time> • <sum
 "-- Mapeo 
 let mapleader = ","
 noremap <leader>w :w<cr>
-noremap <leader>gs :RgFzf<cr>
-noremap <leader>fs : Files<cr>
+"noremap <leader>gs :RgFzf<cr>
+"noremap <leader>fs : Files<cr>
+nnoremap <leader>fs <cmd>Telescope find_files<cr>
+nnoremap <leader>gs <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 noremap <leader>s :ToggleWorkspace<CR>
 nmap <leader>1 <Plug>AirlineSelectTab1
 nmap <leader>2 <Plug>AirlineSelectTab2
