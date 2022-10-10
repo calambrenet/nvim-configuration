@@ -62,7 +62,6 @@ call plug#end()
 "PlugUpgrade
 
 
-Plug 'windwp/nvim-autopairs'
 
 
 lua << EOF
