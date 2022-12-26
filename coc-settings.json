@@ -300,6 +300,7 @@
     "default": "\uf29c"
   },
   "rust-analyzer.lens.implementations": true,
-  "rust-analyzer.inlayHints.enable": true
+  "rust-analyzer.inlayHints.enable": true,
+  "snippets.ultisnips.pythonPrompt": false
 }
 

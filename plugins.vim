@@ -20,6 +20,7 @@ Plug 'preservim/tagbar'
 "Plug 'junegunn/fzf' | Plug 'junegunn/fzf.vim'
 "Plug 'wookayin/fzf-ripgrep.vim'
 Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 Plug 'yggdroot/indentline'
 Plug 'thaerkh/vim-workspace'  " Workspace
 Plug 'tpope/vim-fugitive'  " Git
@@ -29,7 +30,7 @@ Plug 'APZelos/blamer.nvim' " Gitlens https://github.com/APZelos/blamer.nvim
 Plug 'MattesGroeger/vim-bookmarks' " Bookmarks https://github.com/MattesGroeger/vim-bookmarks
 " Plug 'vim-vdebug/vdebug'  " Debug
 Plug 'puremourning/vimspector'
-" Plug 'mhinz/vim-startify'
+Plug 'mhinz/vim-startify'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'sindrets/diffview.nvim'
 Plug 'neoclide/vim-jsx-improve'
@@ -48,6 +49,23 @@ Plug 'windwp/nvim-autopairs'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 Plug 'folke/todo-comments.nvim'
+
+" Wilder
+if has('nvim')
+  function! UpdateRemotePlugins(...)
+    " Needed to refresh runtime files
+    let &rtp=&rtp
+    UpdateRemotePlugins
+  endfunction
+
+  Plug 'gelguy/wilder.nvim', { 'do': function('UpdateRemotePlugins') }
+else
+  Plug 'gelguy/wilder.nvim'
+
+  " To use Python remote plugin features in Vim, can be skipped
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
 
 " No sé configurar:
 "Plug 'neovim/nvim-lspconfig'
