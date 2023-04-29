@@ -17,7 +17,6 @@
   "diagnostic.virtualText": false,
   "diagnostic.checkCurrentLine": true,
   "diagnostic.separateRelatedInformationAsDiagnostics": true,
-  "prettier.onlyUseLocalVersion": true,
   "eslint.probe": [
     "typescript",
     "typescriptreact",

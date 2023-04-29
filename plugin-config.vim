@@ -17,6 +17,26 @@ nmap <Leader>di <Plug>VimspectorBalloonEval
 " for visual mode, the visually selected text
 xmap <Leader>di <Plug>VimspectorBalloonEval
 
+"-- Copilot
+imap <silent> <C-j> <Plug>(copilot-next)
+imap <silent> <C-k> <Plug>(copilot-previous)
+imap <silent> <C-\> <Plug>(copilot-dismiss)
+let g:copilot_assume_mapped = 1
+let g:copilot_filetypes = {
+\    "*" : v:false,
+\    "javascript" : v:true,
+\    "typescript" : v:true,
+\    "typescriptreact": v:true,
+\    "lua" : v:true,
+\    "rust" : v:true,
+\    "c" : v:true,
+\    "c#" : v:true,
+\    "c++" : v:true,
+\    "go" : v:true,
+\    "php" : v:true,
+\    "python" : v:true,
+\}
+
 
 "-- PyDocString
 let g:pydocstring_formatter = 'google' 
@@ -195,6 +215,9 @@ let g:tagbar_type_javascriptreact = {
  \ ]}
 
 "-- COC
+
+"Prettier command
+command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
 
 " Ultinsnips
 " Trigger configuration. You need to change this to something other than <tab> if you use one of the following:
