@@ -9,7 +9,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'  " Temas para airline
 "Plug 'sonph/onehalf', { 'rtp': 'vim' }
 " Plug 'shaunsingh/nord.nvim'
-Plug 'andersevenrud/nordic.nvim'
+"Plug 'andersevenrud/nordic.nvim'
+Plug 'rebelot/kanagawa.nvim'	" Nuevo theme
 "Plug 'sheerun/vim-polyglot'
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-commentary'
@@ -45,6 +46,7 @@ Plug 'rafi/vim-venom', { 'for': 'python' }
 Plug 'tpope/vim-eunuch'
 Plug 'mbbill/undotree'
 Plug 'windwp/nvim-autopairs'
+Plug 'szw/vim-maximizer'
 
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }

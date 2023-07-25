@@ -5,13 +5,14 @@ set fileformat=unix
 "    \ set tabstop=4 |
 "    \ set softtabstop=4 |
 "    \ set shiftwidth=4 |
+
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set autoindent
 set smartindent
 set smarttab
-set expandtab
+set expandtab " Usar espacios en lugar de tabs al identar
 set nowrap
 set list
 set listchars=eol:.,tab:>-,trail:~,extends:>,precedes:<

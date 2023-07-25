@@ -17,24 +17,14 @@ nmap <Leader>di <Plug>VimspectorBalloonEval
 " for visual mode, the visually selected text
 xmap <Leader>di <Plug>VimspectorBalloonEval
 
+
 "-- Copilot
 imap <silent> <C-j> <Plug>(copilot-next)
 imap <silent> <C-k> <Plug>(copilot-previous)
 imap <silent> <C-\> <Plug>(copilot-dismiss)
 let g:copilot_assume_mapped = 1
 let g:copilot_filetypes = {
-\    "*" : v:false,
-\    "javascript" : v:true,
-\    "typescript" : v:true,
-\    "typescriptreact": v:true,
-\    "lua" : v:true,
-\    "rust" : v:true,
-\    "c" : v:true,
-\    "c#" : v:true,
-\    "c++" : v:true,
-\    "go" : v:true,
-\    "php" : v:true,
-\    "python" : v:true,
+\    "*" : v:true,
 \}
 
 
@@ -82,7 +72,7 @@ set t_Co=256
 set cursorline
 " colorscheme onehalfdark
 " let g:airline_theme='onehalfdark'
-let g:airline_theme='deus'
+let g:airline_theme='base16'
 " colorscheme nord
 
 let g:nord_underline_option = 'none'
@@ -90,7 +80,8 @@ let g:nord_italic = v:true
 let g:nord_italic_comments = v:false
 let g:nord_minimal_mode = v:false
 let g:nord_alternate_backgrounds = v:false
-colorscheme nordic
+"colorscheme nordic
+colorscheme kanagawa-wave " Nuevo theme 
 
 " lightline
 " let g:lightline = { 'colorscheme': 'onehalfdark' } 
@@ -191,8 +182,8 @@ nmap <leader>8 <Plug>AirlineSelectTab8
 nmap <leader>9 <Plug>AirlineSelectTab9
 nmap <leader>- <Plug>AirlineSelectPrevTab
 nmap <leader>+ <Plug>AirlineSelectNextTab
-
-
+" maximize current split or return to previous
+noremap <C-w>m :MaximizerToggle<CR>
 
 "-- TAGBAR CONFIG
 nmap <F2> :TagbarToggle<CR>
